@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_view_pager">
+
+    <fragment
+        android:id="@+id/fragment_view_pager"
+        android:name="com.lue.mygarden.ui.viewpager.ViewPagerFragment"
+        android:label="ViewPager"
+        tools:layout="@layout/fragment_view_pager">
+        <action
+            android:id="@+id/action_fragment_view_pager_to_fragment_plant_detail"
+            app:destination="@id/fragment_plant_detail">
+            <argument
+                android:name="plantId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_plant_detail"
+        android:name="com.lue.mygarden.ui.plantdetail.PlantDetailFragment"
+        android:label="Plant Detail"
+        tools:layout="@layout/fragment_plant_detail">
+        <argument
+            android:name="plantId"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
